@@ -8,7 +8,7 @@ HD_0158_RG0019::HD_0158_RG0019(
   Adafruit_GFX(DOT_PANEL_WIDTH * n_panel, DOT_PANEL_HEIGHT),
   pinA3(pin_a3), pinA2(pin_a2), pinA1(pin_a1), pinA0(pin_a0),
   pinDG(pin_dg), pinCLK(pin_clk), pinWE(pin_we), pinDR(pin_dr), pinALE(pin_ale),
-  transactionCounter(0), nPanel(n_panel) {
+  nPanel(n_panel), transactionCounter(0) {
   if (!bufferR) {
     bufferR = (uint32_t*) calloc(n_panel * DOT_PANEL_HEIGHT, sizeof(uint32_t));
   }
