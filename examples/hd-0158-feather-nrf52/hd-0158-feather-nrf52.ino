@@ -8,7 +8,7 @@
 #define PANEL_PIN_ABB PIN_A4
 #define PANEL_PIN_A3  PIN_A3
 #define PANEL_PIN_A2  PIN_A2
-#define PANEL_PIN_A1  PIN_A1　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+#define PANEL_PIN_A1  PIN_A1
 #define PANEL_PIN_A0  PIN_A0
 #define PANEL_PIN_DG  16
 #define PANEL_PIN_CLK 15
