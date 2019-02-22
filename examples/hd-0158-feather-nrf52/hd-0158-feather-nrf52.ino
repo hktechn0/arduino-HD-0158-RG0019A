@@ -1,4 +1,3 @@
-#include <bluefruit.h>
 #include <HD_0158_RG0019.h>
 
 /**
@@ -9,7 +8,7 @@
 #define PANEL_PIN_ABB PIN_A4
 #define PANEL_PIN_A3  PIN_A3
 #define PANEL_PIN_A2  PIN_A2
-#define PANEL_PIN_A1  PIN_A1
+#define PANEL_PIN_A1  PIN_A1　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 #define PANEL_PIN_A0  PIN_A0
 #define PANEL_PIN_DG  16
 #define PANEL_PIN_CLK 15
@@ -19,13 +18,17 @@
 
 HD_0158_RG0019 matrix(
   1,
-  PANEL_PIN_SE, PANEL_PIN_ABB,
   PANEL_PIN_A3, PANEL_PIN_A2, PANEL_PIN_A1, PANEL_PIN_A0,
   PANEL_PIN_DG, PANEL_PIN_CLK, PANEL_PIN_WE, PANEL_PIN_DR, PANEL_PIN_ALE);
 
 void setup() {
   Serial.begin(115200);
   Serial.println("Initializing...");
+
+  // HD_0158_RG0019 library doesn't use manual RAM control.
+  // Set SE and ABB low.
+  digitalWrite(PANEL_PIN_SE, LOW);
+  digitalWrite(PANEL_PIN_ABB, LOW);
 
   delay(100);
   

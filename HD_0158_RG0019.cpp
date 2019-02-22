@@ -2,11 +2,10 @@
 #include "HD_0158_RG0019.h"
 
 HD_0158_RG0019::HD_0158_RG0019(
-  int8_t n_panel, int8_t pin_se, int8_t pin_abb,
+  int8_t n_panel,
   int8_t pin_a3, int8_t pin_a2, int8_t pin_a1, int8_t pin_a0,
   int8_t pin_dg, int8_t pin_clk, int8_t pin_we, int8_t pin_dr, int8_t pin_ale) :
   Adafruit_GFX(DOT_PANEL_WIDTH * n_panel, DOT_PANEL_HEIGHT),
-  pinSE(pin_se), pinABB(pin_abb),
   pinA3(pin_a3), pinA2(pin_a2), pinA1(pin_a1), pinA0(pin_a0),
   pinDG(pin_dg), pinCLK(pin_clk), pinWE(pin_we), pinDR(pin_dr), pinALE(pin_ale),
   transactionCounter(0), nPanel(n_panel) {
@@ -28,8 +27,6 @@ HD_0158_RG0019::~HD_0158_RG0019(void) {
 }
 
 void HD_0158_RG0019::begin() {
-  pinMode(pinSE, OUTPUT);
-  pinMode(pinABB, OUTPUT);
   pinMode(pinA3, OUTPUT);
   pinMode(pinA2, OUTPUT);
   pinMode(pinA1, OUTPUT);
@@ -40,8 +37,6 @@ void HD_0158_RG0019::begin() {
   pinMode(pinDR, OUTPUT);
   pinMode(pinALE, OUTPUT);
 
-  digitalWrite(pinSE, LOW);
-  digitalWrite(pinABB, LOW);
   digitalWrite(pinA3, LOW);
   digitalWrite(pinA2, LOW);
   digitalWrite(pinA1, LOW);

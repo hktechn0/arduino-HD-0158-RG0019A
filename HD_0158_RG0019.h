@@ -15,7 +15,6 @@ class HD_0158_RG0019 : public Adafruit_GFX {
   public:
     HD_0158_RG0019(
       int8_t n_panel,
-      int8_t pin_se, int8_t pin_abb,
       int8_t pin_a3, int8_t pin_a2, int8_t pin_a1, int8_t pin_a0,
       int8_t pin_dg, int8_t pin_clk, int8_t pin_we, int8_t pin_dr, int8_t pin_ale);
     ~HD_0158_RG0019(void);
@@ -28,7 +27,7 @@ class HD_0158_RG0019 : public Adafruit_GFX {
     void endWrite(void);
 
   private:
-    int8_t pinSE, pinABB, pinA3, pinA2, pinA1, pinA0, pinDG, pinCLK, pinWE, pinDR, pinALE;
+    int8_t pinA3, pinA2, pinA1, pinA0, pinDG, pinCLK, pinWE, pinDR, pinALE;
     uint8_t nPanel;
     uint32_t transactionCounter;
     uint32_t *bufferR, *bufferG;
