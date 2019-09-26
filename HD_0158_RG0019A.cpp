@@ -1,7 +1,7 @@
 #include <Adafruit_GFX.h>
-#include "HD_0158_RG0019.h"
+#include "HD_0158_RG0019A.h"
 
-HD_0158_RG0019::HD_0158_RG0019(
+HD_0158_RG0019A::HD_0158_RG0019A(
   int8_t n_panel,
   int8_t pin_a3, int8_t pin_a2, int8_t pin_a1, int8_t pin_a0,
   int8_t pin_dg, int8_t pin_clk, int8_t pin_we, int8_t pin_dr, int8_t pin_ale) :
@@ -17,7 +17,7 @@ HD_0158_RG0019::HD_0158_RG0019(
   }
 }
 
-HD_0158_RG0019::~HD_0158_RG0019(void) {
+HD_0158_RG0019A::~HD_0158_RG0019A(void) {
   if (bufferR) {
     free(bufferR);
   }
@@ -26,7 +26,7 @@ HD_0158_RG0019::~HD_0158_RG0019(void) {
   }
 }
 
-void HD_0158_RG0019::begin() {
+void HD_0158_RG0019A::begin() {
   pinMode(pinA3, OUTPUT);
   pinMode(pinA2, OUTPUT);
   pinMode(pinA1, OUTPUT);
@@ -50,17 +50,17 @@ void HD_0158_RG0019::begin() {
   fillScreen(DOT_BLACK);
 }
 
-void HD_0158_RG0019::drawPixel(int16_t x, int16_t y, uint16_t color) {
+void HD_0158_RG0019A::drawPixel(int16_t x, int16_t y, uint16_t color) {
   startWrite();
   writePixel(x, y, color);
   endWrite();
 }
 
-void HD_0158_RG0019::startWrite() {
+void HD_0158_RG0019A::startWrite() {
   transactionCounter++;
 }
 
-void HD_0158_RG0019::endWrite() {
+void HD_0158_RG0019A::endWrite() {
   if (--transactionCounter) {
     return;
   }
@@ -100,7 +100,7 @@ void HD_0158_RG0019::endWrite() {
   digitalWrite(pinA3, 0);
 }
 
-void HD_0158_RG0019::writePixel(int16_t x, int16_t y, uint16_t color) {
+void HD_0158_RG0019A::writePixel(int16_t x, int16_t y, uint16_t color) {
   if (!bufferR || !bufferG || x < 0 || x >= DOT_PANEL_WIDTH * nPanel || y < 0 || y >= DOT_PANEL_HEIGHT) {
     return;
   }

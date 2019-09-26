@@ -1,5 +1,5 @@
-#ifndef _HD_0158_RG0019_H_
-#define _HD_0158_RG0019_H_
+#ifndef _HD_0158_RG0019A_H_
+#define _HD_0158_RG0019A_H_
 
 #include <Adafruit_GFX.h>
 
@@ -11,13 +11,13 @@
 #define DOT_GREEN 0x07C0
 #define DOT_ORANGE (DOT_RED | DOT_GREEN)
 
-class HD_0158_RG0019 : public Adafruit_GFX {
+class HD_0158_RG0019A : public Adafruit_GFX {
   public:
-    HD_0158_RG0019(
+    HD_0158_RG0019A(
       int8_t n_panel,
       int8_t pin_a3, int8_t pin_a2, int8_t pin_a1, int8_t pin_a0,
       int8_t pin_dg, int8_t pin_clk, int8_t pin_we, int8_t pin_dr, int8_t pin_ale);
-    ~HD_0158_RG0019(void);
+    ~HD_0158_RG0019A(void);
 
     void begin();
     void drawPixel(int16_t x, int16_t y, uint16_t color);
@@ -33,4 +33,4 @@ class HD_0158_RG0019 : public Adafruit_GFX {
     uint32_t *bufferR, *bufferG;
 };
 
-#endif // _HD_0158_RG0019_H_
+#endif // _HD_0158_RG0019A_H_
