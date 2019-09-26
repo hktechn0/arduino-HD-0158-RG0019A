@@ -1,7 +1,7 @@
-#include <HD_0158_RG0019.h>
+#include <HD_0158_RG0019A.h>
 
 /**
- * Example for HD-0158-RG0019 32x16 dot matrix LED panel with Adafruit Feather nRF52 Bluefruit LE [nRF52832]
+ * Example for HD-0158-RG0019A 32x16 dot matrix LED panel with Adafruit Feather nRF52 Bluefruit LE [nRF52832]
  */
 
 #define PANEL_PIN_SE  PIN_A5
@@ -16,7 +16,7 @@
 #define PANEL_PIN_DR  11
 #define PANEL_PIN_ALE 30
 
-HD_0158_RG0019 matrix(
+HD_0158_RG0019A matrix(
   1,
   PANEL_PIN_A3, PANEL_PIN_A2, PANEL_PIN_A1, PANEL_PIN_A0,
   PANEL_PIN_DG, PANEL_PIN_CLK, PANEL_PIN_WE, PANEL_PIN_DR, PANEL_PIN_ALE);
@@ -25,7 +25,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Initializing...");
 
-  // HD_0158_RG0019 library doesn't use manual RAM control.
+  // HD_0158_RG0019A library doesn't use manual RAM control.
   // Set SE and ABB low.
   digitalWrite(PANEL_PIN_SE, LOW);
   digitalWrite(PANEL_PIN_ABB, LOW);
