@@ -5,7 +5,7 @@ HD_0158_RG0019A::HD_0158_RG0019A(
   int8_t n_panel,
   int8_t pin_a3, int8_t pin_a2, int8_t pin_a1, int8_t pin_a0,
   int8_t pin_dg, int8_t pin_clk, int8_t pin_we, int8_t pin_dr, int8_t pin_ale) :
-  Adafruit_GFX(DOT_PANEL_WIDTH * n_panel, DOT_PANEL_HEIGHT),
+  GRAPHICS_LIB(DOT_PANEL_WIDTH * n_panel, DOT_PANEL_HEIGHT),
   pinA3(pin_a3), pinA2(pin_a2), pinA1(pin_a1), pinA0(pin_a0),
   pinDG(pin_dg), pinCLK(pin_clk), pinWE(pin_we), pinDR(pin_dr), pinALE(pin_ale),
   nPanel(n_panel), transactionCounter(0) {
