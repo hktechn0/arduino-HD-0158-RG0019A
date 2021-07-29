@@ -7,7 +7,6 @@ using GRAPHICS_LIB = EfontWrapper;
 #else
 #include <Adafruit_GFX.h>
 using GRAPHICS_LIB = Adafruit_GFX;
-#else
 #endif
 
 #define DOT_PANEL_WIDTH 32
