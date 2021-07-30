@@ -1,7 +1,13 @@
 #ifndef _HD_0158_RG0019A_H_
 #define _HD_0158_RG0019A_H_
 
+#if defined(USE_EFONT)
+#include <efontWrapper.h>
+using GRAPHICS_LIB = EfontWrapper;
+#else
 #include <Adafruit_GFX.h>
+using GRAPHICS_LIB = Adafruit_GFX;
+#endif
 
 #define DOT_PANEL_WIDTH 32
 #define DOT_PANEL_HEIGHT 16
@@ -11,7 +17,7 @@
 #define DOT_GREEN 0x07C0
 #define DOT_ORANGE (DOT_RED | DOT_GREEN)
 
-class HD_0158_RG0019A : public Adafruit_GFX {
+class HD_0158_RG0019A : public GRAPHICS_LIB {
   public:
     HD_0158_RG0019A(
       int8_t n_panel,
